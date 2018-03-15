@@ -41,12 +41,18 @@ console.log(NaN==NaN);       //false
 console.log(NaN===NaN);      //false
 console.log(isNaN("12,3"));  //true
 
+
+
+//Part 000000000
 //字符串比较
 console.log("B".localeCompare("A"));  //1
 console.log("13".localeCompare("15"));  //-1 前边小-1
 console.log("15".localeCompare("15"));  //0  一样大0
 console.log("15".localeCompare("13"));  //1  前边大1
 
+
+
+//Part 111111111 字符串提取
 //slice()
 var str2="abcdef";
 console.log(str2.slice(2));  //cdef 
@@ -81,3 +87,22 @@ console.log(str11.indexOf("d",4));  //9
 //返回一个下标值，“d”是要索引的字符，“4”指从4开始往后查找
 //indexOf()函数用于查找子字符串在当前字符串中第一次出现的位置。
 //该函数属于String对象
+
+
+//substr 与 substring的区别   功能：截取字符串
+1.
+var str13="abcdefghijklmn";
+var str14=str13.substr(2,5);  //5为要截取的长度
+console.log(str13,str14);  //str13未受到破坏
+//abcdefghijklmn    cdefg 
+2.
+var str15=str13.substring(2,5);  //5表示结束位置：到下标为5之前，即e
+console.log(str13,str15);  //str13未受到破坏
+//abcdefghijklmn cde
+
+//Part 222222222 字符串变换
+var str16="aaa".concat("bbb");  //aaabbb  连接字符串
+var str17="    abc def     \r\n  ".trim();  //abc def   
+//返回已移除前导空格、尾随空格和行终止符的原始字符串
+var str18="abcDEF".toLowerCase();  //abcdef  将字符串中的字符都转化为小写字母
+var str19="abcDEF".toUpperCase();  //ABCDEF  转化成大写字母
