@@ -21,8 +21,11 @@ console.log(obj.fun3());//ƒ fun2() {return this.x;//若改为 return this;}
 console.log(obj.fun3()());//12
 console.log(obj.fun4());//34
 //已知obj.fun3=fun1;所以调用obj.fun3即是调用fun1,而fun1的功能是return一个返回值，即函数fun2
-//obj.fun3()是函数fun2,所以obj.fun3()()即是调用fun2，即fun2()，所以返回值是12.因为此处调用主体是全局的fun1?
-//obj.fun4=fun1(),所以obj.fun4()即为fun1()(),易知fun1()是函数fun2,所以fun1()()即为调用fun2,所以值为34.因为？
+//obj.fun3()是函数fun2,所以obj.fun3()()即是调用fun2，即fun2()，所以返回值是12.因为此处调用主体是全局
+//obj.fun4=fun1(),所以obj.fun4()即为fun1()(),易知fun1()是函数fun2,所以fun1()()即为调用fun2,所以值为34.
+//进一步解答！！！！！！！！！！！！！！！！
+//fun3()的结果是一个全局的函数对象，所以再调用一次，也就是fun3()()，返回的x就应该是全局的了。
+//而fun4=fun1(),实际就是定义了一下obj.fun4,其值为fun2,所以返回对象的12
 
 
 //思考如下代码输出什么 值类型
