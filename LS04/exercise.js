@@ -2,6 +2,30 @@
  * Created by Liyue on 2018/3/16.
  */
 
+//2018.5.20增加
+//switch后边小括号里的内容是干什么用的?
+//是和case进行匹配，匹配的话才执行对应的语句. 和关系表达式的结果比较
+
+//swith就是先计算括号里表达式的值，然后逐个与后面的case标签比较
+//switch是全等比较
+
+var i = 65;
+switch(new Boolean(true)){
+    case i>=60:
+        alert('及格');
+        break;
+    case i<60:
+        alert('不及格');
+        break;
+    default:
+        alert('default');
+}     //default
+//因为new Boolean(true)是对象，它指向一块内存，
+//所以case条件中没有和它匹配上的，所以结果就是default了
+//总结：
+//switch后边的匹配条件是new一个对象时，应该都是执行的default语句
+
+
 
  // LS04/demo01.js
  //上一章数据类型知识点回顾 Part1~Part3
@@ -395,6 +419,7 @@ switch(new Boolean(true)){
         alert('default');
 }//default
 //(new Boolean(true)返回的是true或false,实际返回了false，直接执行default语句
+
 
 var i = 65;
 switch(new Boolean(true)){
